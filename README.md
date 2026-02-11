@@ -107,7 +107,7 @@ uv sync
 
 Lege eine .env Datei an (oder kopiere .example.env, falls vorhanden) und trage ein:
 ```env
-`GOOGLE_API_KEY=your_gemini_api_key_here
+GOOGLE_API_KEY=your_gemini_api_key_here
 ```
 
 ### 4) Gradio App starten
