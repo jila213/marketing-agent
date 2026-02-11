@@ -94,62 +94,74 @@ Im Fokus dieser App steht **`marketing_agent`**, der über einen **LlmAgent** mi
 ```bash
 git clone <EURE_REPO_URL>
 cd marketing-agent
-
-2) Dependencies installieren
-uv run adk web
+```
 
 
+### 2) Dependencies installieren
+```bash
+uv sync
+```
 Öffnen: http://127.0.0.1:8000/dev-ui/
 
-🧑‍💻 Nutzung (Gradio)
+### 3) Environment konfigurieren
 
-Produkt / Service eintragen (z. B. „Nachhaltige Trinkflasche“)
+Lege eine .env Datei an (oder kopiere .example.env, falls vorhanden) und trage ein:
+```env
+`GOOGLE_API_KEY=your_gemini_api_key_here
+```
 
-Zielgruppe definieren (z. B. „Studierende, umweltbewusst“)
+### 4) Gradio App starten
+```bash
+uv run app.py
+```
 
-Marketingziel angeben (z. B. „Markenbekanntheit steigern“)
+### 5) ADK Dev UI starten (optional)
+```bash
+uv run adk web
+```
 
-Aufgabe wählen (Kampagnenidee / Werbetext / Produktbeschreibung)
+--- 
 
-„Generieren“ klicken
+## 🧑‍💻 Nutzung (Gradio)
 
-Optional: Unter „Ergebnis verfeinern“ eine Anpassungsanweisung eingeben und „Verfeinern“ klicken
+1. Produkt / Service eintragen (z. B. „Nachhaltige Trinkflasche“)
 
-Optional: Sternebewertung + Kommentar absenden
+2. Zielgruppe definieren (z. B. „Studierende, umweltbewusst“)
 
-📌 Prompt-Konzept (SYSTEM_PROMPT)
+3. Marketingziel angeben (z. B. „Markenbekanntheit steigern“)
+
+4. Aufgabe wählen (Kampagnenidee / Werbetext / Produktbeschreibung)
+
+5. „Generieren“ klicken
+
+6. Optional: Unter „Ergebnis verfeinern“ eine Anpassungsanweisung eingeben und „Verfeinern“ klicken
+
+7. Optional: Sternebewertung + Kommentar absenden
+
+---
+
+## 📌 Prompt-Konzept (SYSTEM_PROMPT)
 
 Der Marketing-Agent wird über einen System-Prompt gesteuert, der u. a. folgende Punkte enthält:
 
-Marketing-Frameworks (z. B. AIDA, PAS)
+- Marketing-Frameworks (z. B. AIDA, PAS)
+- Sauberes Markdown-Format im Output
+- Klare Struktur für Kampagnenideen:
+  - Kampagnenname  
+  - Headline  
+  - Zentrale Botschaft  
+  - Kreativer Hook  
+  - Empfohlene Kanäle  
+  - Call-to-Action  
+- Constraints:
+  - keine erfundenen Produktfakten  
+  - keine generischen Floskeln  
+  - Tone-of-Voice beachten  
+- Few-Shot Example zur Stabilisierung der Qualität
+---
 
-Style-Vorgaben: Output in sauberem Markdown
-
-Struktur für Kampagnenideen:
-
-Kampagnenname
-
-Headline
-
-Zentrale Botschaft
-
-Kreativer Hook
-
-Empfohlene Kanäle
-
-Call-to-Action
-
-Constraints:
-
-keine erfundenen Produktfakten
-
-keine generischen Floskeln („Gamechanger“ etc.)
-
-Tone-of-Voice beachten
-
-Few-Shot Example zur Stabilisierung der Qualität
-
-📂 Projektstruktur (Beispiel)
+## 📂 Projektstruktur (Beispiel)
+```
 .
 ├── agents/
 │   ├── bi_agent/                     # zusätzlicher Agent (Vorlage / Beispiel)
@@ -161,10 +173,11 @@ Few-Shot Example zur Stabilisierung der Qualität
 ├── pyproject.toml                    # Dependencies (uv)
 ├── README.md
 └── .env                              # API Key (nicht committen)
+```
+---
+## 🧩 Herausforderungen & Lernerfahrungen (Reflexion)
 
-🧩 Herausforderungen & Lernerfahrungen (Reflexion)
-
-Herausforderungen
+### Herausforderungen
 
 Prompt Engineering: Ergebnisse sind nur dann gut, wenn Inputs klar strukturiert sind und Constraints sauber formuliert sind.
 
@@ -174,7 +187,7 @@ Human-in-the-loop: Verfeinerung musste so integriert werden, dass sie nicht „n
 
 UI-Validierung: Pflichtfelder, Fehlerfälle und Button-Interaktivität (z. B. Verfeinern erst nach Generierung) sinnvoll umsetzen.
 
-Lernerfahrungen
+### Lernerfahrungen
 
 Aufbau einer ADK-basierten Agenten-App in einer wartbaren Struktur (Prompts, Agent-Logik, UI getrennt)
 
