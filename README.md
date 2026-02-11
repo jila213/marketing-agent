@@ -95,22 +95,13 @@ Im Fokus dieser App steht **`marketing_agent`**, der über einen **LlmAgent** mi
 git clone <EURE_REPO_URL>
 cd marketing-agent
 
-## 2)  Dependencies installieren
-uv sync
-
-## 3) Environment konfigurieren
+2) Dependencies installieren
 uv run adk web
 
-## 4) Gradio App starten
-uv run app.py
 
-### Öffnen: http://127.0.0.1:8000/dev-ui/
+Öffnen: http://127.0.0.1:8000/dev-ui/
 
-## 5) ADK Dev UI starten (optional)
-uv run adk web
-### Öffnen: http://127.0.0.1:8000/dev-ui/
-
-## 🧑‍💻 Nutzung (Gradio)
+🧑‍💻 Nutzung (Gradio)
 
 Produkt / Service eintragen (z. B. „Nachhaltige Trinkflasche“)
 
