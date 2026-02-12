@@ -187,6 +187,10 @@ Human-in-the-loop: Verfeinerung musste so integriert werden, dass sie nicht „n
 
 UI-Validierung: Pflichtfelder, Fehlerfälle und Button-Interaktivität (z. B. Verfeinern erst nach Generierung) sinnvoll umsetzen.
 
+Technische Herausforderungen waren Fehlermeldungen aufgrund der Pfade und Ordnerstruktur.
+
+Des Weiteren gab es manchmal Probleme, bezüglich des API Schlüssels, dass dieser erschöpft wäre.
+
 ### Lernerfahrungen
 
 Aufbau einer ADK-basierten Agenten-App in einer wartbaren Struktur (Prompts, Agent-Logik, UI getrennt)
