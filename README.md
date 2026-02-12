@@ -25,6 +25,9 @@ Der Agent generiert kreative Marketinginhalte (z. B. **Kampagnenideen, Werbetext
 ## ✨ Funktionen
 
 ### Gradio App
+- Pfad:
+  - \marketing-agent\gradio-adk-agent
+   --> uv run app.py
 - Eingaben:
   - **Produkt / Service**
   - **Zielgruppe**
@@ -40,6 +43,9 @@ Der Agent generiert kreative Marketinginhalte (z. B. **Kampagnenideen, Werbetext
 - Grundlegende Validierung & Fehlerbehandlung (z. B. Pflichtfelder, leere Antworten, Exceptions)
 
 ### ADK Dev UI
+- Pfad 
+  - \marketing-agent\gradio-adk-agent\agents
+   --> uv run adk web
 - Auswahl des Agents (`marketing_agent` / ggf. weiterer Agent wie `bi_agent`)
 - Trace/State/Events für transparente Agenten-Ausführung
 
