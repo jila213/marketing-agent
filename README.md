@@ -179,13 +179,11 @@ Der Marketing-Agent wird über einen System-Prompt gesteuert, der u. a. folgende
 
 ### Herausforderungen
 
-Prompt Engineering: Ergebnisse sind nur dann gut, wenn Inputs klar strukturiert sind und Constraints sauber formuliert sind.
+Prompt Engineering: Zu Beginn erhielten wir teilweise unspezifische oder inkonsistente Ergebnisse, da unser Prompt noch nicht ausreichend strukturiert war. Durch die Ergänzung von COMPASS und Chain of thought kamen dann bessere Ergebnisse.
 
-ADK Verständnis: Zusammenspiel von LlmAgent, InMemoryRunner und Sessions war anfangs ungewohnt.
+Verfeinerungsausgabe: Verfeinerung musste so integriert werden, dass sie nicht „nochmal neu“ generiert, sondern wirklich das bestehende Ergebnis überarbeitet.
 
-Human-in-the-loop: Verfeinerung musste so integriert werden, dass sie nicht „nochmal neu“ generiert, sondern wirklich das bestehende Ergebnis überarbeitet.
-
-UI-Validierung: Pflichtfelder, Fehlerfälle und Button-Interaktivität (z. B. Verfeinern erst nach Generierung) sinnvoll umsetzen.
+Verbindung mit der Datenbank, da wir Probleme hatten die Extension richtig zu verbinden.
 
 Technische Herausforderungen waren Fehlermeldungen aufgrund der Pfade und Ordnerstruktur.
 
