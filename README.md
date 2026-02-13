@@ -98,7 +98,7 @@ Im Fokus dieser App steht **`marketing_agent`**, der über einen **LlmAgent** mi
 
 ### 1) Repository klonen
 ```bash
-git clone <EURE_REPO_URL>
+git clone https://github.com/jila213/marketing-agent.git
 cd marketing-agent
 ```
 
@@ -111,9 +111,16 @@ uv sync
 
 ### 3) Environment konfigurieren
 
-Lege eine .env Datei an (oder kopiere .example.env, falls vorhanden) und trage ein:
+.env Datei anlegen (oder kopiere .example.env)  und trage ein:
 ```env
 GOOGLE_API_KEY=your_gemini_api_key_here
+```
+MSSQL_SERVER=
+MSSQL_DATABASE=
+MSSQL_USERNAME=
+MSSQL_PASSWORD=
+MSSQL_DRIVER=ODBC Driver 18 for SQL Server
+TRUST_SERVER_CERTIFICATE=true
 ```
 
 ### 4) Gradio App starten
@@ -121,7 +128,7 @@ GOOGLE_API_KEY=your_gemini_api_key_here
 uv run app.py
 ```
 
-### 5) ADK Dev UI starten (optional)
+### 5) ADK Dev UI starten
 ```bash
 uv run adk web
 ```
@@ -166,7 +173,7 @@ Der Marketing-Agent wird über einen System-Prompt gesteuert, der u. a. folgende
 - Few-Shot Example zur Stabilisierung der Qualität
 ---
 
-## 📂 Projektstruktur (Beispiel)
+## 📂 Projektstruktur 
 ```
 .
 ├── agents/
